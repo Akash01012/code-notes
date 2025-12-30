@@ -10,7 +10,7 @@ export default function NoteCard({ note, reload }) {
   const [content, setContent] = useState(note.content);
   const [tags, setTags] = useState(note.tags?.join(", ") || "");
 
-  // 🔑 THIS FIXES THE LIST ISSUE
+  //  THIS FIXES THE LIST ISSUE
   useEffect(() => {
     setLocalNote(note);
     setTitle(note.title);

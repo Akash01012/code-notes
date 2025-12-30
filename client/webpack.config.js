@@ -1,6 +1,10 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,20 +19,16 @@ export default {
   },
 
   devServer: {
-  port: 3000,
-  historyApiFallback: true,
-  proxy: [
-    {
-      context: ["/api"],
-      target: "http://localhost:8000",
-      changeOrigin: true
-    }
-  ]
-},
+    port: 3000,
+    historyApiFallback: true
+  },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html"
+    }),
+    new webpack.DefinePlugin({
+      __API_URL__: JSON.stringify(process.env.API_URL)
     })
   ],
 
