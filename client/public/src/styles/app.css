@@ -1,0 +1,232 @@
+/* Shell */
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  min-height: 100vh;           /* ensure full page height */
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.header-subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Split layout: wider left, full height */
+.split-layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  height: calc(100vh - 220px);
+  max-height: none;
+}
+
+/* Left: form + list stacked */
+.left-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 100%;            /* fill split-layout height */
+}
+
+/* Form wrapper: full column width */
+.note-form-wrapper {
+  margin: 0 0 0.25rem;
+  width: 100%;
+}
+
+/* form card */
+.note-form-wrapper form {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* inputs inside form */
+.note-form-wrapper input,
+.note-form-wrapper textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 0.75rem;
+  transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.note-form-wrapper input:focus,
+.note-form-wrapper textarea:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.18);
+}
+
+/* submit button */
+.note-form-wrapper button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.3rem;
+  background: #6366f1;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.25);
+}
+
+.note-form-wrapper button:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* Left list fills remaining height */
+.notes-list {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+  padding: 0.5rem 0;
+  overflow-y: auto;
+}
+.note-list-item {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.note-list-item h4 {
+  margin: 0 0 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-list-item p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-list-item:hover {
+  background: #f3f4ff;
+}
+
+.note-list-item--active {
+  background: #eef2ff;
+  border-left-color: #6366f1;
+}
+
+/* Right detail fills column height */
+.note-detail {
+  background: transparent;
+  border-radius: 16px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Empty state */
+.empty-state {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* NoteCard header/content/delete */
+.note-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.note-card {
+ height: 100vh;
+}
+.note-card h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.note-card-content {
+  margin: 0.2rem 0 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #111827;
+}
+
+/* delete button inside card */
+.note-delete-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.note-delete-btn:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: auto;
+    max-height: none;
+  }
+
+  .notes-list {
+    max-height: 220px;
+  }
+}
